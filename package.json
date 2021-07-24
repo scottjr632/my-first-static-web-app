@@ -14,7 +14,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "start-server-and-test func:start http://localhost:7071 start",
+    "func:start": "npm --prefix api build && npm --prefix api start"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,5 +32,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "@azure/functions": "^1.2.3",
+    "@azure/static-web-apps-cli": "^0.6.1",
+    "start-server-and-test": "^1.13.0"
+  },
+  "proxy": "http://localhost:7071"
 }
